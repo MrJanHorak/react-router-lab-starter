@@ -1,18 +1,24 @@
 import React from "react";
 import Home from "./Home";
+import{ Link, Outlet, NavLink } from 'react-router-dom'
 
 const App = () => {
     return (
         <div>
-          <nav>
-            <a href="/">Go to Home Page</a>
-            <a href="/procedures">See Our Procedures</a>
-            <a href="/contact">Contact Us!</a>
+          <nav         style={{
+          borderBottom: "solid 1px",
+          paddingBottom: "1rem",
+          display: "flex",
+          gap: "15px",
+          fontSize: "20px",
+
+        }}>
+            <NavLink to="/">Go to Home Page</NavLink>
+            <NavLink to="/procedures">See Our Procedures</NavLink>
+            <NavLink to="/contact">Contact Us!</NavLink>
           </nav>
-          <div>
-            <Home />
+          <Outlet />
           </div>
-        </div>
     );
 }
 
